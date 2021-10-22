@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 import pandas as pd
@@ -228,4 +229,4 @@ def identify_errors(airtable_response):
     return
 
 if __name__=="__main__":
-    airtable_download('question_type_relations', params_dict={"view" : "Grid view"}, api_key='key9grECWCcgaHKSW', base_id='appCY3RrgxRfjjTw7', record_id=None)
+    airtable_download('question_type_relations', params_dict={"view" : "Grid view"}, api_key = os.environ['airtable_api_key'], base_id= os.environ['base_id'], record_id=None)
